@@ -1,0 +1,140 @@
+{
+  "info": {
+    "_postman_id": "4c532402-30d4-484d-8e13-cc676c74e36c",
+    "name": "Rate Limiter API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "13710282"
+  },
+  "item": [
+    {
+      "name": "foo-basic",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "client-basic",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/foo",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "foo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "bar-basic",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "client-basic",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/bar",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "bar-premium",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "client-premium",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/bar",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "foo-premium",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "client-premium",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/foo",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "foo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/health",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "health"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
