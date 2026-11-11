@@ -39,6 +39,34 @@ PORT=8080 STORAGE=sqlite SQLITE_PATH=/tmp/rl.db npm start
 
 ### Try it
 
+There is a [Postman Collection](./Rate_Limiter_API.postman_collection.json) available with all local and cloud endpoints.
+
+The cloud project on Render is accessible through the following endpoint: https://rate-limiter-api-xh0b.onrender.com
+
+Have in mind that this instance spins down after 15 minutes of inactivity, and it takes a minute for it to be ready for new requests.
+
+### Cloud examples
+
+```bash
+# check if instance is up and running
+curl -s -w " %{http_code}\n" -H "Authorization: Bearer client-basic" https://rate-limiter-api-xh0b.onrender.com/health
+
+# basic client: 3rd request OK, 4th is 429
+for i in $(seq 1 4); do curl -s -w " %{http_code}\n" -H "Authorization: Bearer client-basic" https://rate-limiter-api-xh0b.onrender.com/foo; done
+
+# /bar has a higher limit: 5th request OK, 6th is 429
+for i in $(seq 1 6); do curl -s -w " %{http_code}\n" -H "Authorization: Bearer client-basic" https://rate-limiter-api-xh0b.onrender.com/bar; done
+
+# premium client has higher limits: all requests OK
+for i in $(seq 1 6); do curl -s -w " %{http_code}\n" -H "Authorization: Bearer client-premium" https://rate-limiter-api-xh0b.onrender.com/foo; done
+# if executed 2 times in a 10s window, the 2 last requests will be 429
+
+# /bar with premium client reaching it's limit: 20th request OK, 21st is 429
+for i in $(seq 1 21); do curl -s -w " %{http_code}\n" -H "Authorization: Bearer client-premium" https://rate-limiter-api-xh0b.onrender.com/bar; done
+```
+
+### Local examples
+
 ```bash
 # basic client: 3rd request OK, 4th is 429
 for i in $(seq 1 4); do curl -s -w " %{http_code}\n" -H "Authorization: Bearer client-basic" localhost:3000/foo; done
@@ -53,8 +81,6 @@ for i in $(seq 1 6); do curl -s -w " %{http_code}\n" -H "Authorization: Bearer c
 # /bar with premium client reaching it's limit: 20th request OK, 21st is 429
 for i in $(seq 1 21); do curl -s -w " %{http_code}\n" -H "Authorization: Bearer client-premium" localhost:3000/bar; done
 ```
-
-There is also a [Postman Collection](./Rate_Limiter_API.postman_collection.json) available with all endpoints.
 
 ## Tests
 

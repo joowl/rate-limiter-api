@@ -7,134 +7,284 @@
   },
   "item": [
     {
-      "name": "foo-basic",
-      "request": {
-        "auth": {
-          "type": "bearer",
-          "bearer": [
-            {
-              "key": "token",
-              "value": "client-basic",
-              "type": "string"
+      "name": "Cloud",
+      "item": [
+        {
+          "name": "foo-basic",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "client-basic",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://rate-limiter-api-xh0b.onrender.com/foo",
+              "protocol": "https",
+              "host": [
+                "rate-limiter-api-xh0b",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "foo"
+              ]
             }
-          ]
+          },
+          "response": []
         },
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "localhost:3000/foo",
-          "host": [
-            "localhost"
-          ],
-          "port": "3000",
-          "path": [
-            "foo"
-          ]
+        {
+          "name": "bar-basic",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "client-basic",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://rate-limiter-api-xh0b.onrender.com/bar",
+              "protocol": "https",
+              "host": [
+                "rate-limiter-api-xh0b",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "bar"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "bar-premium",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "client-premium",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://rate-limiter-api-xh0b.onrender.com/bar",
+              "protocol": "https",
+              "host": [
+                "rate-limiter-api-xh0b",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "bar"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "foo-premium",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "client-premium",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://rate-limiter-api-xh0b.onrender.com/foo",
+              "protocol": "https",
+              "host": [
+                "rate-limiter-api-xh0b",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "foo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "health",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://rate-limiter-api-xh0b.onrender.com/health",
+              "protocol": "https",
+              "host": [
+                "rate-limiter-api-xh0b",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "health"
+              ]
+            }
+          },
+          "response": []
         }
-      },
-      "response": []
+      ]
     },
     {
-      "name": "bar-basic",
-      "request": {
-        "auth": {
-          "type": "bearer",
-          "bearer": [
-            {
-              "key": "token",
-              "value": "client-basic",
-              "type": "string"
+      "name": "Local",
+      "item": [
+        {
+          "name": "foo-basic",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "client-basic",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/foo",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "foo"
+              ]
             }
-          ]
+          },
+          "response": []
         },
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "localhost:3000/bar",
-          "host": [
-            "localhost"
-          ],
-          "port": "3000",
-          "path": [
-            "bar"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "bar-premium",
-      "request": {
-        "auth": {
-          "type": "bearer",
-          "bearer": [
-            {
-              "key": "token",
-              "value": "client-premium",
-              "type": "string"
+        {
+          "name": "bar-basic",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "client-basic",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/bar",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "bar"
+              ]
             }
-          ]
+          },
+          "response": []
         },
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "localhost:3000/bar",
-          "host": [
-            "localhost"
-          ],
-          "port": "3000",
-          "path": [
-            "bar"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "foo-premium",
-      "request": {
-        "auth": {
-          "type": "bearer",
-          "bearer": [
-            {
-              "key": "token",
-              "value": "client-premium",
-              "type": "string"
+        {
+          "name": "bar-premium",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "client-premium",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/bar",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "bar"
+              ]
             }
-          ]
+          },
+          "response": []
         },
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "localhost:3000/foo",
-          "host": [
-            "localhost"
-          ],
-          "port": "3000",
-          "path": [
-            "foo"
-          ]
+        {
+          "name": "foo-premium",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "client-premium",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/foo",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "foo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "health",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/health",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "health"
+              ]
+            }
+          },
+          "response": []
         }
-      },
-      "response": []
-    },
-    {
-      "name": "health",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "localhost:3000/health",
-          "host": [
-            "localhost"
-          ],
-          "port": "3000",
-          "path": [
-            "health"
-          ]
-        }
-      },
-      "response": []
+      ]
     }
   ]
 }
